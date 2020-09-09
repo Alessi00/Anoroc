@@ -37,6 +37,7 @@ The application will allow the user to log in or register using either an Anoroc
 - Mobile Application: [Xamarin Forms | .NET](https://dotnet.microsoft.com/apps/xamarin/xamarin-forms)
 - API: [ASP.NET Core API](https://dotnet.microsoft.com/apps/aspnet/apis)
 - Server: Azure Services
+- WebAp: Angular 10
 
 ## Installation
 
@@ -45,8 +46,13 @@ After cloning, you will need to install the node modules:
 ```
 npm install
 ```
+Then to run the application:
 
+```
+ng serve -o
+```
 
+You will need a Azure Maps key which you place in assests/config/config.dev.json. Steps to obtain a key can be found [here](https://docs.microsoft.com/en-us/azure/azure-maps/quick-demo-map-app)
 
 ## Team
 | Name   | Surname    |        Email         |       Github.io        |
