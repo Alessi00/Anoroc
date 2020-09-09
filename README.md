@@ -52,7 +52,7 @@ Then to run the application:
 ng serve -o
 ```
 
-You will need a Azure Maps key which you place in assests/config/config.dev.json. Steps to obtain a key can be found [here](https://docs.microsoft.com/en-us/azure/azure-maps/quick-demo-map-app)
+You will need a Azure Maps key which you place in assests/config/config.dev.json. Steps to obtain a key can be found [here](https://docs.microsoft.com/en-us/azure/azure-maps/quick-demo-map-app).
 
 ## Team
 | Name   | Surname    |        Email         |       Github.io        |
