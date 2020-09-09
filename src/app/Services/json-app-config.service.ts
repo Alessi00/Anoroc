@@ -1,23 +1,26 @@
 import { Injectable } from '@angular/core';
-import {HttpClient} from '@angular/common/http';
-import { Secrets } from '../Models/secrets.model';
+import { HttpClient } from '@angular/common/http';
+import { IAppConfig } from '../Models/iapp-config.interface';
 @Injectable({
   providedIn: 'root'
 })
 export class JsonAppConfigService 
 {
-  constructor(private http: HttpClient) { }
-
-  Secrets: Secrets;
-
-  public getAzureMapsKey(){
-    return this.http.get<Secrets>('../secrets.json')
-    .toPromise()
-    .then(data => {
-      this.Secrets.Azure_Maps_Key = data.Azure_Maps_Key;
-    })
-    .catch(()=>{
-      console.log("Could not find secrets.json");
+  static settings: IAppConfig;
+  http: HttpClient;
+  constructor(private _http: HttpClient) {
+    this.http = _http;
+   }
+  load() 
+  {
+    const jsonFile = 'assets/config/config.dev.json';
+    return new Promise<void>((resolve, reject) => {
+      this.http.get(jsonFile).toPromise().then((response: IAppConfig) => {
+        JsonAppConfigService.settings = <IAppConfig>response;
+        resolve();
+      }).catch((response: any) => {
+        reject(`Could not load file '${jsonFile}': ${JSON.stringify(response)}`);
+      });
     });
   }
 }

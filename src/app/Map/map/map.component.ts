@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ViewChild, ElementRef, AfterViewInit } from '@angular/core';
 import { Map, AuthenticationType } from 'azure-maps-control';
+import { JsonAppConfigService } from 'src/app/Services/json-app-config.service';
 
 
 @Component({
@@ -8,10 +9,13 @@ import { Map, AuthenticationType } from 'azure-maps-control';
   templateUrl: './map.component.html',
   styleUrls: ['./map.component.sass']
 })
-export class MapComponent implements AfterViewInit {
+
+export class MapComponent implements AfterViewInit 
+{
   initialLatitude = -25.7545444;
   initialLongitude = 28.2292589;
-  constructor() {
+  constructor() 
+  {
 
   }
 
@@ -20,11 +24,12 @@ export class MapComponent implements AfterViewInit {
 
   ngAfterViewInit(): void {
     const map = new Map(this.mapContainer.nativeElement, {
-      center: [-25,75424, 28,2315868],
-      zoom: 1,
+      center: [28.2292589, -25.7545444],
+      zoom: 10,
       authOptions: {
         authType: AuthenticationType.subscriptionKey,
-        subscriptionKey: ''
+        subscriptionKey: JsonAppConfigService.settings && JsonAppConfigService.settings.AzureMaps ?
+                        JsonAppConfigService.settings.AzureMaps.Primarykey : ''
       }
     });
   }

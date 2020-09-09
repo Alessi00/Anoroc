@@ -1,13 +1,17 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { NgModule, APP_INITIALIZER } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './Header/header/header.component';
 import { MapComponent } from './Map/map/map.component';
+import { HttpModule } from '@angular/http';
+import { HttpClientModule, HttpClient } from '@angular/common/http';
+import { JsonAppConfigService } from './Services/json-app-config.service';
 
-import { AzureMapsModule } from 'ng-azure-maps';
-import { environment } from '../environments/environment';
+export function initializeApp(appConfig: JsonAppConfigService) {
+  return () => appConfig.load();
+}
 
 @NgModule({
   declarations: [
@@ -18,13 +22,16 @@ import { environment } from '../environments/environment';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    AzureMapsModule.forRoot({
-      authOptions: {
-        subscriptionKey: ''
-      }
-    })
+    HttpClientModule,
+    HttpModule,
   ],
-  providers: [],
+  providers: [
+    JsonAppConfigService,
+    { 
+      provide: APP_INITIALIZER,
+      useFactory: initializeApp,
+      deps: [JsonAppConfigService], multi: true 
+   }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
