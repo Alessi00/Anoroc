@@ -40,19 +40,13 @@ The application will allow the user to log in or register using either an Anoroc
 
 ## Installation
 
-### Required Software
+After cloning, you will need to install the node modules:
 
-- [Visual Studios](https://visualstudio.microsoft.com/) With these options installed:
-![VisualStudioInstallOptions](https://user-images.githubusercontent.com/61750301/84587406-413da680-ae1f-11ea-88f3-bad89050ea1a.png)
-- Clone the Anoroc-Mobile or Anoroc-Server repository into your local directory.
-- Open Visual Studios by launching the AnorocMobileApp.sln or Anoroc.sln file respectively.
+```
+npm install
+```
 
 
-## Testing Instructions
-
-- Open the Test Explorer in Visual Studios:\
-![VisualStudiosTestingExplorer](https://user-images.githubusercontent.com/61750301/88283131-264a3600-cceb-11ea-8b4c-5726d76ae633.png)
-- Click on the green play button to Run All Tests.
 
 ## Team
 | Name   | Surname    |        Email         |       Github.io        |
