@@ -6,6 +6,9 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './Header/header/header.component';
 import { MapComponent } from './Map/map/map.component';
 
+import { AzureMapsModule } from 'ng-azure-maps';
+import { environment } from '../environments/environment';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -14,7 +17,12 @@ import { MapComponent } from './Map/map/map.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    AzureMapsModule.forRoot({
+      authOptions: {
+        subscriptionKey: ''
+      }
+    })
   ],
   providers: [],
   bootstrap: [AppComponent]
