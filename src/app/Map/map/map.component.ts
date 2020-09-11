@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ViewChild, ElementRef, AfterViewInit } from '@angular/core';
 import { Map, AuthenticationType } from 'azure-maps-control';
 import { JsonAppConfigService } from 'src/app/Services/json-app-config.service';
+import { ClusterServiceService } from 'src/app/Services/cluster-service.service';
 
 
 @Component({
@@ -14,9 +15,12 @@ export class MapComponent implements AfterViewInit
 {
   initialLatitude = -25.7545444;
   initialLongitude = 28.2292589;
-  constructor() 
-  {
+  ClusterService: ClusterServiceService;
 
+  constructor(cluster: ClusterServiceService) 
+  {
+    this.ClusterService = cluster;
+    this.ClusterService.getClusters();
   }
 
   @ViewChild('map', { static: true })
@@ -32,5 +36,6 @@ export class MapComponent implements AfterViewInit
                         JsonAppConfigService.settings.AzureMaps.Primarykey : ''
       }
     });
+
   }
 }
