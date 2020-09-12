@@ -4,4 +4,9 @@ export interface IAppConfig
     {
         Primarykey: string;
     };
+
+    AnorocKey:
+    {
+        access_token: string;
+    };
 }

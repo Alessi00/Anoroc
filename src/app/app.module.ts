@@ -8,6 +8,8 @@ import { MapComponent } from './Map/map/map.component';
 import { HttpModule } from '@angular/http';
 import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { JsonAppConfigService } from './Services/json-app-config.service';
+import { ClusterServiceService } from './Services/cluster-service.service';
+import { FormsModule } from '@angular/forms';
 
 export function initializeApp(appConfig: JsonAppConfigService) {
   return () => appConfig.load();
@@ -24,8 +26,11 @@ export function initializeApp(appConfig: JsonAppConfigService) {
     AppRoutingModule,
     HttpClientModule,
     HttpModule,
+    FormsModule
   ],
   providers: [
+    ClusterServiceService,
+    HttpClient,
     JsonAppConfigService,
     { 
       provide: APP_INITIALIZER,

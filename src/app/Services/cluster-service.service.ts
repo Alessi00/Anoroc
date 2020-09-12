@@ -1,9 +1,39 @@
 import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { Token } from '../Models/token.model';
+import { JsonAppConfigService } from './json-app-config.service';
+import { Cluster } from '../Models/cluster.model';
+import { Observable } from 'rxjs';
+import { ClusterPins } from '../Models/cluster-pins.model';
 
-@Injectable({
-  providedIn: 'root'
-})
+
+@Injectable()
 export class ClusterServiceService {
 
-  constructor() { }
+  token: Token;
+  day: Number;
+  ClusterList: Array<Cluster>;
+  constructor(private http: HttpClient) 
+  {
+    
+  }
+ 
+  getClusters() : Observable<Array<ClusterPins>>
+  {
+    this.token = new Token();
+    this.token.access_token = JsonAppConfigService.settings && JsonAppConfigService.settings.AnorocKey ?
+                              JsonAppConfigService.settings.AnorocKey.access_token : '';
+    this.day = 2;
+    this.token.Object_To_Server = this.day.toString();
+    return this.http.post<Array<ClusterPins>>("https://localhost:5001/Cluster/Pins", this.token);
+  }
+
+  getOldCluster(_day) : Observable<Array<ClusterPins>>
+  {
+    this.token = new Token();
+    this.token.access_token = JsonAppConfigService.settings && JsonAppConfigService.settings.AnorocKey ?
+                              JsonAppConfigService.settings.AnorocKey.access_token : '';
+    this.token.Object_To_Server = _day.toString();
+    return this.http.post<Array<ClusterPins>>("https://localhost:5001/Cluster/OldClusterPins", this.token);
+  }
 }
