@@ -10,6 +10,8 @@ import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { JsonAppConfigService } from './Services/json-app-config.service';
 import { ClusterServiceService } from './Services/cluster-service.service';
 import { FormsModule } from '@angular/forms';
+import { LinegraphComponent } from './Graphs/TotalCases/linegraph/linegraph.component';
+import { AreaLineGraphComponent } from './Graphs/area-line-graph/area-line-graph.component';
 
 export function initializeApp(appConfig: JsonAppConfigService) {
   return () => appConfig.load();
@@ -19,7 +21,9 @@ export function initializeApp(appConfig: JsonAppConfigService) {
   declarations: [
     AppComponent,
     HeaderComponent,
-    MapComponent
+    MapComponent,
+    LinegraphComponent,
+    AreaLineGraphComponent
   ],
   imports: [
     BrowserModule,

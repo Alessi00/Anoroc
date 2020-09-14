@@ -1,10 +1,10 @@
 {
     "AzureMaps":
     {
-        "Primarykey":"Azure key"
+        "Primarykey":""
     },
     "AnorocKey":
     {
-        "access_token":"Anoroc key"
+        "access_token":""
     }
 }
