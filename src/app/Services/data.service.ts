@@ -11,6 +11,6 @@ export class DataService {
 
   GetZADataOverTime()
   {
-    return this.http.get<Array<DataOverTime>>("https://localhost:5001/Data/SouthAfricaOverTime");
+    return this.http.get<Array<DataOverTime>>("https://anoroc-server.azurewebsites.net/Data/SouthAfricaOverTime");
   }
 }

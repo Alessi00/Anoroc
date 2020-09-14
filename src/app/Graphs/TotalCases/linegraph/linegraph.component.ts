@@ -38,7 +38,7 @@ export class LinegraphComponent implements OnInit {
 
   ngOnInit(): void {
     var options = {
-			maintainAspectRatio: false,
+			maintainAspectRatio: true,
 			spanGaps: false,
 			elements: {
 				line: {
