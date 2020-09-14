@@ -29,15 +29,13 @@ export class MapComponent implements AfterViewInit
     this.geoJsonData = new Array<any>();
     this.OldClusterData = new Array<Array<ClusterPins>>();
     this.daysVisited = new Array<number>();
-    for(var i = 0; i < 7; i++)
+    for(var i = 0; i < 8; i++)
     {
       this.ClusterService.getOldCluster(i+1).subscribe(clusterList => {
         this.OldClusterData.push(clusterList);
       });
     }
     this.enableClear = false;
-
-    console.log(this.OldClusterData);
   }
 
   @ViewChild('map', { static: true })
