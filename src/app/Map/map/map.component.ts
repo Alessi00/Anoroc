@@ -28,12 +28,14 @@ export class MapComponent implements AfterViewInit
     this.geoJsonData = new Array<any>();
     this.OldClusterData = new Array<Array<ClusterPins>>();
     this.daysVisited = new Array<number>();
+
     for(var i = 0; i < 8; i++)
     {
       this.ClusterService.getOldCluster(i+1).subscribe(clusterList => {
         this.OldClusterData.push(clusterList);
       });
     }
+
     this.enableClear = false;
   }
 
@@ -47,13 +49,14 @@ export class MapComponent implements AfterViewInit
   ngAfterViewInit(): void {
     this.map = new Map(this.mapContainer.nativeElement, {
       center: [this.initialLongitude, this.initialLatitude],
-      zoom: 10,
+      zoom: 4,
       authOptions: {
         authType: AuthenticationType.subscriptionKey,
         subscriptionKey: JsonAppConfigService.settings && JsonAppConfigService.settings.AzureMaps ?
                         JsonAppConfigService.settings.AzureMaps.Primarykey : ''
       }
     });
+    var that = this;
   }
 
   arrayContains(num)
