@@ -24,6 +24,7 @@ export class MapComponent implements AfterViewInit
   enableClear: boolean;
   constructor(private http: HttpClient, cluster: ClusterServiceService) 
   {
+    console.log(cluster);
     this.ClusterService = cluster;
     this.geoJsonData = new Array<any>();
     this.OldClusterData = new Array<Array<ClusterPins>>();
@@ -57,6 +58,10 @@ export class MapComponent implements AfterViewInit
       }
     });
     var that = this;
+    this.map.events.add('ready', function () {
+      console.log(that);
+      that.drawClusters();
+    });
   }
 
   arrayContains(num)
@@ -103,11 +108,20 @@ export class MapComponent implements AfterViewInit
 
   clearClusters()
   {
+
     this.map.layers.remove(this.Heatmap);
     this.map.sources.clear();
     this.daysVisited = null;
     this.daysVisited = new Array<number>();
     this.enableClear = false;
+    this.Heatmap = new atlas.layer.HeatMapLayer(this.datasource, null, {
+      //Set the weight to the point_count property of the data points.
+      weight: ['get', 'point_count'],
+      
+      //Optionally adjust the radius of each heat point.
+      radius: 20
+    });
+    this.map.layers.add(this.Heatmap);
   }
 
   drawClusters(): void
