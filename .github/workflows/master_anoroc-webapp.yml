@@ -24,11 +24,12 @@ jobs:
       run: |
         npm install
         npm run build --if-present
+        npm run test --if-present
 
     - name: 'Deploy to Azure Web App'
       uses: azure/webapps-deploy@v2
       with:
         app-name: 'anoroc-webapp'
         slot-name: 'production'
-        publish-profile: ${{ secrets.AzureAppService_PublishProfile_33d6bdc1e71f415092dbb0398f2e3654 }}
+        publish-profile: ${{ secrets.AzureAppService_PublishProfile_a5666474ea24453482af7703e226db99 }}
         package: .
