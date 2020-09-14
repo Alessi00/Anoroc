@@ -50,7 +50,7 @@ export class AreaLineGraphComponent implements OnInit {
 			},
 			options: {
         responsive: true,
-        maintainAspectRatio: false,
+        maintainAspectRatio: true,
 				title: {
 					display: true,
 					text: 'Predicition of Subrub Cases using Custom Machine Learning'
