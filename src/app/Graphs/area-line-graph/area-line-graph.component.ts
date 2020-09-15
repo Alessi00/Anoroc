@@ -65,7 +65,7 @@ export class AreaLineGraphComponent implements OnInit {
         maintainAspectRatio: true,
 				title: {
 					display: true,
-					text: 'Predicition of Subrub Cases using Custom Machine Learning'
+					text: 'Predicition of Suburb Cases using Custom Machine Learning'
 				},
 				tooltips: {
 					mode: 'index',
