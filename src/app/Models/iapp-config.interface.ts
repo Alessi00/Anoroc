@@ -9,4 +9,6 @@ export interface IAppConfig
     {
         access_token: string;
     };
+
+    AnorocEndpoint: string;
 }

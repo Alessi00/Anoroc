@@ -83,7 +83,7 @@ export class LinegraphComponent implements OnInit {
         data: {
           labels: this.keys,
           datasets: [{
-            backgroundColor: 'rgba(236,76,76,0.8)',
+            backgroundColor: 'rgba(138,43,226,0.5)',
             borderColor: 'rgb(47,79,79)',
             data: this._data,
             label: 'Total Cases',

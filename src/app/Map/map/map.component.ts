@@ -150,7 +150,15 @@ export class MapComponent implements AfterViewInit
       this.Heatmap = new atlas.layer.HeatMapLayer(this.datasource, null, {
         //Set the weight to the point_count property of the data points.
         weight: ['get', 'point_count'],
-        
+        color: [
+          'interpolate',
+          ['linear'],
+          ['heatmap-density'],
+          0, 'rgba(0,0,0,0)',
+          0.01, 'purple',
+          0.5, '#fb00fb',
+          1, '#00c3ff'
+        ],
         //Optionally adjust the radius of each heat point.
         radius: 20
       });
