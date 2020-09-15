@@ -19,6 +19,16 @@ jobs:
       uses: actions/setup-node@v1
       with:
         node-version: '12.13.0'
+    
+    - name: config.dev.json.json substituting variables
+      uses: microsoft/variable-substitution@v1
+      with:
+        files: 'src/assets/config/config.dev.json'
+      env:
+        AzureMaps.Primarykey: ${{ secrets.Primarykey }}
+        AnorocKey.access_token: ${{ secrets.access_token }}
+        AnorocEndpoint: ${{ secrets.AnorocEndpoint }}
+
 
     - name: npm install, build
       run: |
