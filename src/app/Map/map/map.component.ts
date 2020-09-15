@@ -24,7 +24,6 @@ export class MapComponent implements AfterViewInit
   enableClear: boolean;
   constructor(private http: HttpClient, cluster: ClusterServiceService) 
   {
-    console.log(cluster);
     this.ClusterService = cluster;
     this.geoJsonData = new Array<any>();
     this.OldClusterData = new Array<Array<ClusterPins>>();
@@ -59,7 +58,6 @@ export class MapComponent implements AfterViewInit
     });
     var that = this;
     this.map.events.add('ready', function () {
-      console.log(that);
       that.drawClusters();
     });
   }
@@ -71,7 +69,6 @@ export class MapComponent implements AfterViewInit
     {
       if(this.daysVisited[i] == num)
       {
-        console.log(this.daysVisited[i] + " " + num);
         returnVal = true;
       }
     }
