@@ -31,4 +31,4 @@ jobs:
         app-name: 'anoroc-webapp'
         slot-name: 'production'
         publish-profile: ${{ secrets.AzureAppService_PublishProfile_7788bc57788549688db3dd449995b1b1 }}
-        package: ./dist/anoroc-webapp
+        package: './dist/anoroc-webapp'
