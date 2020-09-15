@@ -10,7 +10,19 @@ export class AreaLineGraphComponent implements OnInit {
 
   
   areachart: Chart;
+  letters = '0123456789ABCDEF';
   constructor() { }
+
+  	getRandomColor() 
+  	{
+		var color = '#';
+
+		for (var i = 0; i < 6; i++) 
+		{
+			color += this.letters[Math.floor(Math.random() * 16)];
+		}
+		return color;
+	}
 
   ngOnInit(): void 
   {
@@ -20,8 +32,8 @@ export class AreaLineGraphComponent implements OnInit {
 				labels: ['1 Day', '2 Days', '3 Days', '4 Days', '5 Days', '6 Days', '7 Days'],
 				datasets: [{
 					label: 'Silveroaks Shopping Center',
-					backgroundColor:'rgba(236,76,76,0.8)',
-					borderColor: 'rgb(47,79,79)',
+					backgroundColor:'rgb(236,76,76)',
+					borderColor: this.getRandomColor(),
 					data: [
 						12,
 						23,
@@ -35,8 +47,8 @@ export class AreaLineGraphComponent implements OnInit {
 				}, {
 					label: 'Menlyn',
 					fill: false,
-					backgroundColor: 'rgba(236,76,76,0.8)',
-					borderColor: 'rgb(47,79,79)',
+					backgroundColor: 'rgb(236,76,76)',
+					borderColor: this.getRandomColor(),
 					data: [
 						34,
 						23,

@@ -25,7 +25,11 @@ export class ClusterServiceService {
                               JsonAppConfigService.settings.AnorocKey.access_token : '';
     this.day = 2;
     this.token.Object_To_Server = this.day.toString();
-    return this.http.post<Array<ClusterPins>>("https://anoroc-server.azurewebsites.net/Cluster/Pins", this.token);
+
+    var baseEndpoint = JsonAppConfigService.settings && JsonAppConfigService.settings.AnorocEndpoint ?
+    JsonAppConfigService.settings.AnorocEndpoint : '';
+
+    return this.http.post<Array<ClusterPins>>(baseEndpoint + "Cluster/Pins", this.token);
   }
 
   getOldCluster(_day) : Observable<Array<ClusterPins>>
@@ -33,7 +37,12 @@ export class ClusterServiceService {
     this.token = new Token();
     this.token.access_token = JsonAppConfigService.settings && JsonAppConfigService.settings.AnorocKey ?
                               JsonAppConfigService.settings.AnorocKey.access_token : '';
+
     this.token.Object_To_Server = _day.toString();
-    return this.http.post<Array<ClusterPins>>("https://anoroc-server.azurewebsites.net/Cluster/OldClusterPins", this.token);
+
+    var baseEndpoint = JsonAppConfigService.settings && JsonAppConfigService.settings.AnorocEndpoint ?
+                       JsonAppConfigService.settings.AnorocEndpoint : '';
+
+    return this.http.post<Array<ClusterPins>>(baseEndpoint + "Cluster/OldClusterPins", this.token);
   }
 }
