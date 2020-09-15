@@ -24,9 +24,12 @@
     "azure-maps-control": "^2.0.29",
     "azure-maps-drawing-tools": "^0.1.4",
     "azure-maps-rest": "^2.0.5",
+    "canvasjs": "^1.8.3",
+    "chart.js": "^2.9.3",
     "http": "0.0.1-security",
     "httpclient": "^0.1.0",
     "ng-azure-maps": "^2.0.1",
+    "ng2-charts": "^2.4.1",
     "rxjs": "~6.6.0",
     "tslib": "^2.0.0",
     "zone.js": "~0.10.2"

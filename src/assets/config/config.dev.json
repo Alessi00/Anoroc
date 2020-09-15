@@ -1,6 +1,11 @@
 {
     "AzureMaps":
     {
-        "Primarykey":"AZURE MAPS KEY"
-    }
+        "Primarykey":""
+    },
+    "AnorocKey":
+    {
+        "access_token":""
+    },
+    "AnorocEndpoint":"https://localhost:5001/"
 }

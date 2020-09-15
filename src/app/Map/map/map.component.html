@@ -1,3 +1,11 @@
-<body>
-    <div #map></div>
-</body>
+
+    <div id="mymap" #map style="padding-top: 1em;">
+        <div id="controls" class="card ml-5" style="background-color: rgba(122, 122, 122, 0.2)">
+            <input type="button" class="btn btn-dark" value="Generate Clusters" (click)="drawClusters()">
+            <input type="button" class="btn btn-dark" value="Clear" (click)="clearClusters()" [disabled] = "!enableClear">
+            <div class="slidecontainer" id="sliderControlcontainer">
+                <label for="oldclusterslider">Load Older Clusters:</label>
+                <input name="oldclusterslider" type="range" min="1" max="8" value="1" class="slider" id="myRange" (input)="sliderInput($event.target.value)" style="background: #8a8787">
+            </div>
+        </div>
+    </div>
