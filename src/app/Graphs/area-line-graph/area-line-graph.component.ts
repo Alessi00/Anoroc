@@ -12,7 +12,7 @@ export class AreaLineGraphComponent implements OnInit {
   areachart: Chart;
   letters = '0123456789ABCDEF';
   constructor() { }
-
+  innerWidth: any;
   	getRandomColor() 
   	{
 		var color = '#';
@@ -26,6 +26,26 @@ export class AreaLineGraphComponent implements OnInit {
 
   ngOnInit(): void 
   {
+	this.innerWidth = window.innerWidth;
+	if(this.innerWidth <= 1280)
+	{
+	  var canvasobj = document.getElementsByTagName('canvas')[1];
+      canvasobj.width  = 500;
+      canvasobj.height = 250;
+	}
+    else if(this.innerWidth <= 1550)
+    {
+      var canvasobj = document.getElementsByTagName('canvas')[1];
+      canvasobj.width  = 600;
+      canvasobj.height = 300;
+	}
+	else
+    {
+      var canvasobj = document.getElementsByTagName('canvas')[1];
+      canvasobj.width  = 750;
+      canvasobj.height = 400;
+    }
+	
     this.areachart = new Chart('areaChart', {
 			type: 'line',
 			data: {
@@ -61,7 +81,7 @@ export class AreaLineGraphComponent implements OnInit {
 				}]
 			},
 			options: {
-        responsive: true,
+        responsive: false,
         maintainAspectRatio: true,
 				title: {
 					display: true,
