@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import {Chart} from 'chart.js'
+import { data } from 'azure-maps-control';
+import {Chart, ChartDataSets} from 'chart.js'
+import { PredictionModel } from 'src/app/Models/prediction-model.model';
+import { DataService } from 'src/app/Services/data.service';
 
 @Component({
   selector: 'app-area-line-graph',
@@ -11,7 +14,35 @@ export class AreaLineGraphComponent implements OnInit {
   
   areachart: Chart;
   letters = '0123456789ABCDEF';
-  constructor() { }
+  _DataService : DataService; 
+  Predicitons: Array<PredictionModel>;
+  myDatasource: ChartDataSets;
+ 	 constructor(dataservice: DataService) 
+  	{
+		  this._DataService = dataservice;
+		  
+		this._DataService.GetPredicitonArea().subscribe(response => {
+			console.log(response);
+			response.forEach(area => {
+				var newdataset = {
+					label: area.Suburb,
+					backgroundColor:'rgb(236,76,76)',
+					borderColor: this.getRandomColor(),
+					data: area.Values,
+					fill: false,
+				};
+				if(this.areachart.data.datasets == null)
+				{
+					this.areachart.data.datasets = [newdataset];
+				}
+				else
+				{
+					this.areachart.data.datasets?.push(newdataset);
+				}
+			});
+			this.areachart.update();
+		})
+	}
   innerWidth: any;
   	getRandomColor() 
   	{
@@ -50,42 +81,14 @@ export class AreaLineGraphComponent implements OnInit {
 			type: 'line',
 			data: {
 				labels: ['1 Day', '2 Days', '3 Days', '4 Days', '5 Days', '6 Days', '7 Days'],
-				datasets: [{
-					label: 'Silveroaks Shopping Center',
-					backgroundColor:'rgb(236,76,76)',
-					borderColor: this.getRandomColor(),
-					data: [
-						12,
-						23,
-						34,
-						45,
-						23,
-						65,
-						12
-					],
-					fill: false,
-				}, {
-					label: 'Menlyn',
-					fill: false,
-					backgroundColor: 'rgb(236,76,76)',
-					borderColor: this.getRandomColor(),
-					data: [
-						34,
-						23,
-						76,
-						34,
-						43,
-						23,
-            76
-					],
-				}]
+				datasets: []
 			},
 			options: {
         responsive: false,
         maintainAspectRatio: true,
 				title: {
 					display: true,
-					text: 'Predicition of Suburb Cases using Custom Machine Learning'
+					text: 'Predicition of Suburb Cases using Singular Spectrum Analysis Forecast Machine Learning Model'
 				},
 				tooltips: {
 					mode: 'index',
