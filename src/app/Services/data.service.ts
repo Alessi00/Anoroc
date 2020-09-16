@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { DataOverTime } from '../Models/data-over-time.model';
+import { PredictionModel } from '../Models/prediction-model.model';
 import { JsonAppConfigService } from './json-app-config.service';
 
 @Injectable({
@@ -17,5 +18,12 @@ export class DataService {
     JsonAppConfigService.settings.AnorocEndpoint : '';
     
     return this.http.get<Array<DataOverTime>>(baseEndpoint + "Data/SouthAfricaOverTime");
+  }
+
+  GetPredicitonArea()
+  {
+    var baseEndpoint = JsonAppConfigService.settings && JsonAppConfigService.settings.AnorocEndpoint ?
+    JsonAppConfigService.settings.AnorocEndpoint : '';
+    return this.http.get<Array<PredictionModel>>(baseEndpoint + "Data/PredictAreas");
   }
 }
