@@ -1,11 +1,11 @@
 {
     "AzureMaps":
     {
-        "Primarykey":""
+        "Primarykey":"6nQuLiQSdo-vHlEN_8eOemmw0RMuQo8XRu8RhYi89c0"
     },
     "AnorocKey":
     {
-        "access_token":""
+        "access_token":"5yArpbJ27skAZYwH4opyi4sMQGC627skAZYwHoxuqVHUsgtZtpCpkCfDDrTBi52y2UUijyRouqVHUsgtZtpCpkCfDDMuhcA5u5SLqsTVVKPbohCzANQ_wsMQGC627skAZYwHoiwhHrhNknYtHHYToa6GX4sMQGC627skAZYwH8bxBuCCXnxAeGqnQ252"
     },
     "AnorocEndpoint":"https://localhost:5001/"
 }

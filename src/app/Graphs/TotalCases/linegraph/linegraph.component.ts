@@ -17,7 +17,7 @@ export class LinegraphComponent implements OnInit {
     this.keys = new Array<string>();
     this._data = new Array<number>();
   }
-
+  innerWidth: any;
   chart: Chart;
   areaChart: Chart;
   keys: Array<string>;
@@ -37,7 +37,28 @@ export class LinegraphComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.innerWidth = window.innerWidth;
+    console.log(this.innerWidth);
+    if(this.innerWidth <= 1280)
+    {
+      var canvasobj = document.getElementsByTagName('canvas')[0];
+        canvasobj.width  = 500;
+        canvasobj.height = 200;
+    }
+    else if(this.innerWidth <= 1550)
+    {
+      var canvasobj = document.getElementsByTagName('canvas')[0];
+      canvasobj.width  = 600;
+      canvasobj.height = 280;
+    }
+    else
+    {
+      var canvasobj = document.getElementsByTagName('canvas')[0];
+      canvasobj.width  = 750;
+      canvasobj.height = 350;
+    }
     var options = {
+      responsive: false,
 			maintainAspectRatio: true,
 			spanGaps: false,
 			elements: {
