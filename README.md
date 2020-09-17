@@ -3,6 +3,7 @@
 ## Table of Contents
 
 - [Project Overview](#projectoverview)
+- [Repositories](#repositories)
 - [Documentation](#documentation)
 - [Technologies](#technologies)
 - [Installation](#installation)
@@ -17,6 +18,12 @@ The application will allow the tracking of multiple contingents that are deemed 
 The application proposed is a tool that tracks the user’s location data on a mobile app, that is sent to the server and stored in a manner that both protects the user’s identity and location, as well as provides a way to generate spatial data that can be analyzed and displayed in the manner of a heat map on the user’s mobile device or the web app. User’s should be able to view and download their location data as well as sensitive data they have opted into entering.
 
 The application will allow the user to log in or register using either an Anoroc account or by the use of their social media accounts (Google, Facebook). Once logged in, the user will be able to voluntarily give their contagent status and select the contagent they will be focusing on. The application allows for anonymous users, these user will simply be able to see the hotspots and calcuate their risk.
+
+## Repositories
+
+- [Anoroc-Server](https://github.com/COS301-SE-2020/Anoroc-Server)
+- [Anoroc-Mobile](https://github.com/COS301-SE-2020/Anoroc-Mobile)
+- [Anoroc-Webapp](https://github.com/COS301-SE-2020/Anoroc-WebApp)
 
 ## Documentation
 
@@ -37,22 +44,22 @@ The application will allow the user to log in or register using either an Anoroc
 - Mobile Application: [Xamarin Forms | .NET](https://dotnet.microsoft.com/apps/xamarin/xamarin-forms)
 - API: [ASP.NET Core API](https://dotnet.microsoft.com/apps/aspnet/apis)
 - Server: Azure Services
+- WebAp: Angular 10
 
 ## Installation
 
-### Required Software
+After cloning, you will need to install the node modules:
 
-- [Visual Studios](https://visualstudio.microsoft.com/) With these options installed:
-![VisualStudioInstallOptions](https://user-images.githubusercontent.com/61750301/84587406-413da680-ae1f-11ea-88f3-bad89050ea1a.png)
-- Clone the Anoroc-Mobile or Anoroc-Server repository into your local directory.
-- Open Visual Studios by launching the AnorocMobileApp.sln or Anoroc.sln file respectively.
+```
+npm install
+```
+Then to run the application:
 
+```
+ng serve -o
+```
 
-## Testing Instructions
-
-- Open the Test Explorer in Visual Studios:\
-![VisualStudiosTestingExplorer](https://user-images.githubusercontent.com/61750301/88283131-264a3600-cceb-11ea-8b4c-5726d76ae633.png)
-- Click on the green play button to Run All Tests.
+You will need a Azure Maps key which you place in assests/config/config.dev.json. Steps to obtain a key can be found [here](https://docs.microsoft.com/en-us/azure/azure-maps/quick-demo-map-app).
 
 ## Team
 | Name   | Surname    |        Email         |       Github.io        |
