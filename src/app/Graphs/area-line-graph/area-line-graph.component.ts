@@ -88,7 +88,7 @@ export class AreaLineGraphComponent implements OnInit {
         maintainAspectRatio: true,
 				title: {
 					display: true,
-					text: 'Predicition of Suburb Cases using Singular Spectrum Analysis Forecast Machine Learning Model'
+					text: ['Predicition of Suburb Cases using Singular Spectrum Analysis Forecast Machine Learning Model', 'Showing Top 5 Suburbs']
 				},
 				tooltips: {
 					mode: 'index',
