@@ -5,7 +5,7 @@
     },
     "AnorocKey":
     {
-        "access_token":""
+        "access_token":"Azure Token"
     },
     "AnorocEndpoint":"https://localhost:5001/"
 }
