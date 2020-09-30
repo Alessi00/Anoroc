@@ -12,6 +12,9 @@ import { ClusterServiceService } from './Services/cluster-service.service';
 import { FormsModule } from '@angular/forms';
 import { LinegraphComponent } from './Graphs/TotalCases/linegraph/linegraph.component';
 import { AreaLineGraphComponent } from './Graphs/area-line-graph/area-line-graph.component';
+import { MainPageComponent } from './MainPage/main-page/main-page.component';
+import { PrivacyInfoPageComponent } from './GDPR/privacy-info-page/privacy-info-page.component';
+import { AIInfoPageComponent } from './AI/aiinfo-page/aiinfo-page.component';
 
 export function initializeApp(appConfig: JsonAppConfigService) {
   return () => appConfig.load();
@@ -23,7 +26,10 @@ export function initializeApp(appConfig: JsonAppConfigService) {
     HeaderComponent,
     MapComponent,
     LinegraphComponent,
-    AreaLineGraphComponent
+    AreaLineGraphComponent,
+    MainPageComponent,
+    PrivacyInfoPageComponent,
+    AIInfoPageComponent
   ],
   imports: [
     BrowserModule,
