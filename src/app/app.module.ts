@@ -15,6 +15,7 @@ import { AreaLineGraphComponent } from './Graphs/area-line-graph/area-line-graph
 import { MainPageComponent } from './MainPage/main-page/main-page.component';
 import { PrivacyInfoPageComponent } from './GDPR/privacy-info-page/privacy-info-page.component';
 import { AIInfoPageComponent } from './AI/aiinfo-page/aiinfo-page.component';
+import { ForecastGraphComponent } from './Graphs/forecast-graph/forecast-graph.component';
 
 export function initializeApp(appConfig: JsonAppConfigService) {
   return () => appConfig.load();
@@ -29,7 +30,8 @@ export function initializeApp(appConfig: JsonAppConfigService) {
     AreaLineGraphComponent,
     MainPageComponent,
     PrivacyInfoPageComponent,
-    AIInfoPageComponent
+    AIInfoPageComponent,
+    ForecastGraphComponent
   ],
   imports: [
     BrowserModule,
