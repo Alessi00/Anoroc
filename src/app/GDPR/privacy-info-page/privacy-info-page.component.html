@@ -1,1 +1,499 @@
-<p>privacy-info-page works!</p>
+<!-- <p>privacy-info-page works!</p> -->
+
+<head>
+  <meta charset="utf-8" />
+
+  <style>
+    body {
+      font-family: sans-serif;
+    }
+
+    section {
+      border-bottom: solid thin rgb(220, 220, 220);
+    }
+
+    header {
+      margin: -0.5 -0.5em 0 -0.5em;
+      text-align: centeleftr;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    h7 {
+      font-family: serif;
+      font-weight: normal;
+    }
+
+    h1 {
+      text-align: center;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: black;
+    }
+
+    nav a:hover {
+      color: rgb(152, 55, 255);
+    }
+
+    nav h1 {
+      font-family: serif;
+      margin: 0 0 0.5em 0;
+    }
+
+    ul,
+    ol {
+      color: rgb(152, 55, 255);
+      font-weight: bold;
+      font-family: serif;
+      font-size: 1.2em;
+    }
+
+    ul {
+      list-style: square outside;
+    }
+
+    ol span {
+      color: black;
+      font-weight: normal;
+      font-family: sans-serif;
+      font-size: 0.84em;
+    }
+
+    ul span {
+      color: black;
+      font-weight: normal;
+      font-family: sans-serif;
+      font-size: 0.84em;
+    }
+
+    blockquote {
+      border-left: solid thick rgb(152, 55, 255);
+    }
+
+    em {
+      font-style: italic;
+    }
+
+    strong {
+      font-weight: bold;
+      color: rgb(152, 55, 255);
+    }
+
+    nav.to-top {
+      display: block;
+      padding: 2.5em 0.5em 0.5em 2.5em;
+      margin: 0;
+      width: auto;
+      position: absolute;
+      right: 2em;
+      left: auto;
+      border-style: none;
+      background-color: transparent;
+    }
+
+    nav.to-top a {
+      margin: 0;
+      border: 0;
+      text-decoration: none;
+      color: royalblue;
+      font-size: 0.8em;
+      font-weight: bold;
+      font-family: sans-serif;
+    }
+
+    nav.to-top a:hover {
+      text-decoration: underline;
+    }
+
+    @media (max-width: 46.9em) {
+      section {
+        margin: 0 -0.5em 1em -0.5em;
+        padding: 0 0.5em 1em 0.5em;
+      }
+
+      header h1 {
+        padding: 0.5em 0 0 0;
+        font-size: 2.5em;
+      }
+
+      h2,
+      h3,
+      h4,
+      h5,
+      h6,
+      h7 {
+        margin: 0.2em 0 0 1em;
+        padding: 0.1em;
+      }
+
+      h1 {
+        font-size: 1.5em;
+      }
+
+      h2 {
+        font-size: 1.2em;
+      }
+
+      h3 {
+        font-size: 1.13em;
+      }
+
+      h4 {
+        font-size: 1.07em;
+      }
+
+      nav {
+        margin: 1em 10% 1em 10%;
+        padding: 1em 0 0 0;
+        width: 22em;
+        border: solid thin rgb(240, 240, 240);
+      }
+
+      nav ul {
+        margin: 0;
+        list-style: square outside;
+      }
+
+      nav a {
+        font-family: serif;
+      }
+
+      nav a:hover {
+        font-weight: bold;
+      }
+    }
+
+    @media (min-width: 47em) {
+      section {
+        margin: 0 -0.5em 1em -0.5em;
+        padding: 2em 8% 2em 8%;
+      }
+
+      header {
+        margin: 0 -0.5em 0 -0.5em;
+      }
+
+      header h1 {
+        padding: 0.5em 0 0 0;
+        font-size: 4em;
+      }
+
+      h2,
+      h3,
+      h4,
+      h5,
+      h6,
+      h7 {
+        margin: 0.8em 0 0 7%;
+        padding: 0.2em;
+      }
+
+      h1 {
+        font-size: 2em;
+        text-align: center;
+        margin: 0 0 1em 0;
+      }
+
+      h2 {
+        font-size: 1.65em;
+      }
+
+      h3 {
+        font-size: 1.4em;
+      }
+
+      h4 {
+        font-size: 1.15em;
+      }
+
+      blockquote {
+        padding: 0 0 0 1.2em;
+        margin: 0 6em 0 4em;
+      }
+
+      ul,
+      ol {
+        padding: 0 6em 0 6em;
+      }
+
+      nav {
+        padding: 0 0 3.5em 0;
+        margin: 0 0 0 0;
+      }
+
+      nav h1 {
+        display: none;
+      }
+
+      nav ul {
+        margin: 0 0 0 -22.5em;
+        padding: 0;
+        float: left;
+        position: absolute;
+        width: 40em;
+        left: 55%;
+        border: solid thin rgb(240, 240, 240);
+        list-style: none outside;
+        align-items: center;
+      }
+
+      nav li {
+        float: left;
+        margin: 1em;
+      }
+
+      nav li ul {
+        display: none;
+      }
+
+      nav a {
+        font-size: 1.1em;
+        font-weight: bold;
+        font-family: sans-serif;
+      }
+    }
+
+    @media print {
+      nav.to-top {
+        display: none;
+      }
+    }
+
+
+
+
+    
+  </style>
+  <title>Anoroc - Privacy Policy</title>
+  <link rel="icon" href="css/icon.png" type="image/icon type" />
+
+  <link
+    href="privacy-policy-updates.xml"
+    type="application/rss+xml"
+    title="Anoroc Privacy Policy Updates"
+    rel="alternate"
+  />
+  <link rel="stylesheet" href="privacy-info-page.component.sass" />
+
+  <!-- <link rel="stylesheet" href="privacy-info-page.component.sass" media="all" type="text/sass" /> -->
+</head>
+
+<body>
+  <header>
+    <h1>Anoroc Privacy Policy</h1>
+  </header>
+
+  <nav>
+    <h1 id="contents">Contents</h1>
+
+    <ul>
+      <li>
+        <a href="#personal-info">Personal info</a>
+      </li>
+
+      <li>
+        <a href="#collection">Collection</a>
+      </li>
+
+      <li><a href="#use">Use</a></li>
+
+      <li>
+        <a href="#disclosure">Disclosure</a>
+        <ul>
+          <li><a href="#disclosure_partners">Partners</a></li>
+          <li><a href="#disclosure_legal">Legal process</a></li>
+        </ul>
+      </li>
+
+      <li>
+        <a href="#storage">Storage</a>
+        <ul>
+          <li><a href="#storage_location">Where your info lives</a></li>
+          <li><a href="#storage_duration">How long we keep your info</a></li>
+        </ul>
+      </li>
+
+      <li>
+        <a href="#misc">About</a>
+        <ul>
+          <li><a href="#misc_choice">Your choices</a></li>
+          <li><a href="#misc_contact">Contact us</a></li>
+        </ul>
+      </li>
+    </ul>
+  </nav>
+
+  <article>
+    
+
+    <section>
+      <h1 id="personal-info">Personal info</h1>
+      <p>
+        When a user creates an account the user enters an email address and
+        password thisis then verified using B2C. What is BSC? Azure Active
+        Directory B2C (Azure AD B2C) is a cloud identity management solution for
+        web and mobile apps. The service provides authentication for apps hosted
+        in the cloud and on-premises. Authentication types include individual
+        accounts, social network accounts, and federated enterprise accounts.
+        The user can also sign in via social media, the same informaition is
+        gathered this way.
+      </p>
+    </section>
+
+    <section>
+      <h1 id="collection">How we collect info</h1>
+      <p>
+        We collect personal information like name, email address, etc. by way of
+        user’s input. A user can create a new account or sign in via social
+        media, this information can be gathered by this means as well. The user
+        inters revelent information for example name, email address. Location
+        with user permission is gatherd via Geolocation which refers to the
+        identification of the geographic location of a user or computing device
+        via a variety of data collection mechanisms. Typically, most geolocation
+        services use network routing addresses or internal GPS devices to
+        determine this location.
+      </p>
+    </section>
+
+    
+
+    <section>
+      <h1 id="use">How we use your info</h1>
+      <p>
+        Your info is used to calculate risk to yourself and other users. Your
+        information i used to contact you in case of risk or communication uses.
+      </p>
+    </section>
+
+    
+
+    <section>
+      <h1 id="disclosure">When we share your info</h1>
+      <p>
+        We do not share your personal information outside the use of maintaining
+        the application.
+      </p>
+      <h2 id="disclosure_partners">Our Partners</h2>
+      <p>
+        This application was brought to you by Agile Bridge and created by
+        Code-Sum-Moar a group part of the COS 301 team from the University of
+        Pretoria with the help of Agile Bridge.
+      </p>
+      <h2 id="disclosure_legal">Legal process</h2>
+      <p>
+        South African has a privacy act, Protection of Personal Information Act
+        (POPI Act) - POPIA. POPIA is in place to promote the protection of
+        personal information processed by public and private bodies; to
+        introduce certain conditions so as to establish minimum requirements for
+        the processing of personal information; to provide for the establishment
+        of an Information Regulator to exercise certain powers and to perform
+        certain duties and functions in terms of this Act and the Promotion of
+        Access to Information Act, 2000; to provide for the issuing of codes of
+        conduct; to provide for the rights of persons regarding unsolicited
+        electronic communications and automated decision making; to regulate the
+        flow of personal information across the borders of the Republic; and to
+        provide for matters connected therewith.
+      </p>
+      <a
+        style="
+          margin: 0;
+          border: 0;
+          text-decoration: none;
+          color: royalblue;
+          font-size: 0.8em;
+          font-weight: bold;
+          font-family: sans-serif;
+        "
+        href="https://popia.co.za"
+      >
+        https://popia.co.za
+      </a>
+      <p>We as a team strive to follow the law and protect your privacy.</p>
+    </section>
+
+    
+
+    <section>
+      <h1 id="storage">How we store your info</h1>
+
+      <h2 id="storage_location">Where your info lives</h2>
+      <p>
+        All user information is stored in a SQL server database. This data will
+        be abled to be erased at a user’s request. An account can be deleted and
+        with it all related data.
+      </p>
+      <h2 id="storage_duration">How long we keep your info</h2>
+      <p>
+        Location data is kept in the database for eight days. This then is old
+        data not used in calculations regarding the application and is then
+        removed from the database. Personal data is kept until a user request
+        deletion of their account.
+      </p>
+    </section>
+
+    
+
+    <section>
+      <h1 id="misc_about">About</h1>
+      <p>
+        Considering the recent Global Emergency, it has been more apparent than
+        ever before that the ability to track and trace a contingent is of the
+        utmost importance. Cotangent tracking allows users to avoid potential
+        infections and for authorities to be able to flatten the infection rate
+        curve by the use of restrictions or medical services at the hot spots of
+        the tracing. The application will allow the tracking of multiple
+        contingents that are deemed as pandemics by the World Health
+        Organisation, that are currently affecting the country that the user is
+        in. Often this will only be one contingent at a time; however, the
+        system will have the capability to track multiple. The application
+        proposed is a tool that tracks the user’s location data on a mobile app,
+        that is sent to the server and stored in a manner that both protects the
+        user’s identity and location, as well as provides a way to generate
+        spatial data that can be analyzed and displayed in the manner of a heat
+        map on the user’s mobile device or the web app. User’s should be able to
+        view and download their location data as well as sensitive data they
+        have opted into entering. The application will allow the user to log in
+        or register using either an Anoroc account or by the use of their social
+        media accounts (Google, Facebook). Once logged in, the user will be able
+        to voluntarily give their contagent status and select the contagent they
+        will be focusing on. The application allows for anonymous users, these
+        user will simply be able to see the hotspots and calcuate their risk.
+      </p>
+      <h2 id="misc_choice">Your choices</h2>
+      <p>
+          The user has the right to allow/deny/enable/disable the location tracking.
+          This gives the user the power to control the information given to the
+          application. The user has the right to inquire all related data to
+          themselves. The data is send to to the email address registered to the
+          user to insure that a third party having access to a users Anoroc account
+          can not have access to the users personal data unless said party have
+          access to the users email as well. A user can choose the data being
+          accessed by the system. A user has the choice to remove all data from the
+          database.
+
+      </p>
+      <h2 id="misc_contact">Contact us</h2>
+      <a
+        style="
+          margin: 0;
+          border: 0;
+          text-decoration: none;
+          color: royalblue;
+          font-size: 0.8em;
+          font-weight: bold;
+          font-family: sans-serif;
+        "
+        href="mailto:code.sum.moar@gmail.com?subject = Feedback&body = Message"
+      >
+        Email us at code.sum.moar@gmail.com
+      </a>
+    </section>
+  </article>
+
+</body>
