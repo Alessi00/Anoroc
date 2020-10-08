@@ -3,6 +3,7 @@ import { ViewChild, ElementRef, AfterViewInit } from '@angular/core';
 import { Map, AuthenticationType } from 'azure-maps-control';
 import { JsonAppConfigService } from 'src/app/Services/json-app-config.service';
 import { ClusterServiceService } from 'src/app/Services/cluster-service.service';
+import { ItineraryServiceService} from 'src/app/Services/itinerary-service.service';
 import * as atlas from 'azure-maps-control';
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { ClusterPins } from 'src/app/Models/cluster-pins.model';
@@ -19,6 +20,7 @@ export class MapComponent implements AfterViewInit
   initialLatitude = -25.7545444;
   initialLongitude = 28.2292589;
   ClusterService: ClusterServiceService;
+  ItineraryService: ItineraryServiceService;
   OldClusterData: Array<Array<ClusterPins>>;
   daysVisited: Array<number>;
   enableClear: boolean;
@@ -167,5 +169,10 @@ export class MapComponent implements AfterViewInit
       this.datasource.add(this.geoJsonData, 0);
     });
     this.enableClear = true;
+  }
+
+  search(): void
+  {
+
   }
 }
