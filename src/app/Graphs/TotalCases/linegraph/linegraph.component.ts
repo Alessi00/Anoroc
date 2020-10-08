@@ -35,7 +35,10 @@ export class LinegraphComponent implements OnInit {
     }
     return false;
   }
-
+  openDataSource()
+  {
+    window.open("https://github.com/dsfsi/covid19za/tree/master/data");
+  }
   ngOnInit(): void {
     this.innerWidth = window.innerWidth;
     console.log(this.innerWidth);
@@ -48,6 +51,8 @@ export class LinegraphComponent implements OnInit {
     else if(this.innerWidth <= 1550)
     {
       var canvasobj = document.getElementsByTagName('canvas')[0];
+      var datasource = document.getElementById('datasourcebtn');
+      datasource.style.width = "600px";
       canvasobj.width  = 600;
       canvasobj.height = 280;
     }

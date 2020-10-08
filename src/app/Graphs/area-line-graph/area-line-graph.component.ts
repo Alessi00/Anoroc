@@ -66,7 +66,9 @@ export class AreaLineGraphComponent implements OnInit {
 	}
     else if(this.innerWidth <= 1550)
     {
-      var canvasobj = document.getElementsByTagName('canvas')[1];
+	  var canvasobj = document.getElementsByTagName('canvas')[1];
+	  var moreinfobutton = document.getElementById('moreinfo');
+	  moreinfobutton.style.width = "600px";
       canvasobj.width  = 600;
       canvasobj.height = 300;
 	}
