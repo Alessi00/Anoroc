@@ -1,287 +1,16 @@
 <!-- <p>privacy-info-page works!</p> -->
 
+<!-- <link rel="stylesheet" href="privacy-info-page.component.sass" media="all" type="text/sass" /> -->
 <head>
   <meta charset="utf-8" />
 
-  <style>
-    body {
-      font-family: sans-serif;
-    }
-
-    section {
-      border-bottom: solid thin rgb(220, 220, 220);
-    }
-
-    header {
-      margin: -0.5 -0.5em 0 -0.5em;
-      text-align: centeleftr;
-    }
-
-    h1,
-    h2,
-    h3,
-    h4,
-    h5,
-    h6,
-    h7 {
-      font-family: serif;
-      font-weight: normal;
-    }
-
-    h1 {
-      text-align: center;
-    }
-
-    nav a {
-      text-decoration: none;
-      color: black;
-    }
-
-    nav a:hover {
-      color: rgb(152, 55, 255);
-    }
-
-    nav h1 {
-      font-family: serif;
-      margin: 0 0 0.5em 0;
-    }
-
-    ul,
-    ol {
-      color: rgb(152, 55, 255);
-      font-weight: bold;
-      font-family: serif;
-      font-size: 1.2em;
-    }
-
-    ul {
-      list-style: square outside;
-    }
-
-    ol span {
-      color: black;
-      font-weight: normal;
-      font-family: sans-serif;
-      font-size: 0.84em;
-    }
-
-    ul span {
-      color: black;
-      font-weight: normal;
-      font-family: sans-serif;
-      font-size: 0.84em;
-    }
-
-    blockquote {
-      border-left: solid thick rgb(152, 55, 255);
-    }
-
-    em {
-      font-style: italic;
-    }
-
-    strong {
-      font-weight: bold;
-      color: rgb(152, 55, 255);
-    }
-
-    nav.to-top {
-      display: block;
-      padding: 2.5em 0.5em 0.5em 2.5em;
-      margin: 0;
-      width: auto;
-      position: absolute;
-      right: 2em;
-      left: auto;
-      border-style: none;
-      background-color: transparent;
-    }
-
-    nav.to-top a {
-      margin: 0;
-      border: 0;
-      text-decoration: none;
-      color: royalblue;
-      font-size: 0.8em;
-      font-weight: bold;
-      font-family: sans-serif;
-    }
-
-    nav.to-top a:hover {
-      text-decoration: underline;
-    }
-
-    @media (max-width: 46.9em) {
-      section {
-        margin: 0 -0.5em 1em -0.5em;
-        padding: 0 0.5em 1em 0.5em;
-      }
-
-      header h1 {
-        padding: 0.5em 0 0 0;
-        font-size: 2.5em;
-      }
-
-      h2,
-      h3,
-      h4,
-      h5,
-      h6,
-      h7 {
-        margin: 0.2em 0 0 1em;
-        padding: 0.1em;
-      }
-
-      h1 {
-        font-size: 1.5em;
-      }
-
-      h2 {
-        font-size: 1.2em;
-      }
-
-      h3 {
-        font-size: 1.13em;
-      }
-
-      h4 {
-        font-size: 1.07em;
-      }
-
-      nav {
-        margin: 1em 10% 1em 10%;
-        padding: 1em 0 0 0;
-        width: 22em;
-        border: solid thin rgb(240, 240, 240);
-      }
-
-      nav ul {
-        margin: 0;
-        list-style: square outside;
-      }
-
-      nav a {
-        font-family: serif;
-      }
-
-      nav a:hover {
-        font-weight: bold;
-      }
-    }
-
-    @media (min-width: 47em) {
-      section {
-        margin: 0 -0.5em 1em -0.5em;
-        padding: 2em 8% 2em 8%;
-      }
-
-      header {
-        margin: 0 -0.5em 0 -0.5em;
-      }
-
-      header h1 {
-        padding: 0.5em 0 0 0;
-        font-size: 4em;
-      }
-
-      h2,
-      h3,
-      h4,
-      h5,
-      h6,
-      h7 {
-        margin: 0.8em 0 0 7%;
-        padding: 0.2em;
-      }
-
-      h1 {
-        font-size: 2em;
-        text-align: center;
-        margin: 0 0 1em 0;
-      }
-
-      h2 {
-        font-size: 1.65em;
-      }
-
-      h3 {
-        font-size: 1.4em;
-      }
-
-      h4 {
-        font-size: 1.15em;
-      }
-
-      blockquote {
-        padding: 0 0 0 1.2em;
-        margin: 0 6em 0 4em;
-      }
-
-      ul,
-      ol {
-        padding: 0 6em 0 6em;
-      }
-
-      nav {
-        padding: 0 0 3.5em 0;
-        margin: 0 0 0 0;
-      }
-
-      nav h1 {
-        display: none;
-      }
-
-      nav ul {
-        margin: 0 0 0 -22.5em;
-        padding: 0;
-        float: left;
-        position: absolute;
-        width: 40em;
-        left: 55%;
-        border: solid thin rgb(240, 240, 240);
-        list-style: none outside;
-        align-items: center;
-      }
-
-      nav li {
-        float: left;
-        margin: 1em;
-      }
-
-      nav li ul {
-        display: none;
-      }
-
-      nav a {
-        font-size: 1.1em;
-        font-weight: bold;
-        font-family: sans-serif;
-      }
-    }
-
-    @media print {
-      nav.to-top {
-        display: none;
-      }
-    }
-
-
-
-
-    
-  </style>
-  <title>Anoroc - Privacy Policy</title>
-  <link rel="icon" href="css/icon.png" type="image/icon type" />
-
-  <link
+  <!-- <link
     href="privacy-policy-updates.xml"
     type="application/rss+xml"
     title="Anoroc Privacy Policy Updates"
     rel="alternate"
-  />
+  /> -->
   <link rel="stylesheet" href="privacy-info-page.component.sass" />
-
-  <!-- <link rel="stylesheet" href="privacy-info-page.component.sass" media="all" type="text/sass" /> -->
 </head>
 
 <body>
@@ -289,14 +18,14 @@
     <h1>Anoroc Privacy Policy</h1>
   </header>
 
-  <nav>
+  <!-- 
+    <nav>
     <h1 id="contents">Contents</h1>
 
     <ul>
       <li>
         <a href="#personal-info">Personal info</a>
       </li>
-
       <li>
         <a href="#collection">Collection</a>
       </li>
@@ -327,12 +56,50 @@
         </ul>
       </li>
     </ul>
-  </nav>
+  </nav> 
+-->
 
   <article>
-    
-
     <section>
+      <h1 id="GDPR-info">GDPR</h1>
+      <p>
+        We are GDPR compliant. What does this mean? GDPR is a regulation that
+        requires businesses to protect the personal data and privacy of EU
+        citizens for transactions that occur within EU member states. And
+        non-compliance could cost companies dearly. <b></b>
+        In order to be GDPR compliant we have implemented the following aspects
+        into our product:
+      </p>
+
+      <ul>
+        <li>User can download all of their data and all related to them.</li>
+
+        <li>User can delete their account, deletes all their data.</li>
+
+        <li>User can have anonymity when using the application.</li>
+
+        <li>Contact us by email with the link at the bottom of the page.</li>
+
+        <li>Delete all the user’s location clusters older than 8 days.</li>
+
+        <li>User's consent when they activating Location Tracking.</li>
+      </ul>
+
+      <a
+        style="
+          margin: 0;
+          border: 0;
+          text-decoration: none;
+          color: royalblue;
+          font-size: 0.8em;
+          font-weight: bold;
+          font-family: sans-serif;
+        "
+        href="https://gdpr-info.eu"
+        target="_blank"
+      >
+        https://gdpr-info.eu
+      </a>
       <h1 id="personal-info">Personal info</h1>
       <p>
         When a user creates an account the user enters an email address and
@@ -361,8 +128,6 @@
       </p>
     </section>
 
-    
-
     <section>
       <h1 id="use">How we use your info</h1>
       <p>
@@ -370,8 +135,6 @@
         information i used to contact you in case of risk or communication uses.
       </p>
     </section>
-
-    
 
     <section>
       <h1 id="disclosure">When we share your info</h1>
@@ -411,13 +174,12 @@
           font-family: sans-serif;
         "
         href="https://popia.co.za"
+        target="_blank"
       >
         https://popia.co.za
       </a>
-      <p>We as a team strive to follow the law and protect your privacy.</p>
+      <!-- <p>We as a team strive to follow the law and protect your privacy.</p> -->
     </section>
-
-    
 
     <section>
       <h1 id="storage">How we store your info</h1>
@@ -436,8 +198,6 @@
         deletion of their account.
       </p>
     </section>
-
-    
 
     <section>
       <h1 id="misc_about">About</h1>
@@ -467,16 +227,15 @@
       </p>
       <h2 id="misc_choice">Your choices</h2>
       <p>
-          The user has the right to allow/deny/enable/disable the location tracking.
-          This gives the user the power to control the information given to the
-          application. The user has the right to inquire all related data to
-          themselves. The data is send to to the email address registered to the
-          user to insure that a third party having access to a users Anoroc account
-          can not have access to the users personal data unless said party have
-          access to the users email as well. A user can choose the data being
-          accessed by the system. A user has the choice to remove all data from the
-          database.
-
+        The user has the right to allow/deny/enable/disable the location
+        tracking. This gives the user the power to control the information given
+        to the application. The user has the right to inquire all related data
+        to themselves. The data is send to to the email address registered to
+        the user to insure that a third party having access to a users Anoroc
+        account can not have access to the users personal data unless said party
+        have access to the users email as well. A user can choose the data being
+        accessed by the system. A user has the choice to remove all data from
+        the database.
       </p>
       <h2 id="misc_contact">Contact us</h2>
       <a
@@ -495,5 +254,4 @@
       </a>
     </section>
   </article>
-
 </body>
