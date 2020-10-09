@@ -1,0 +1,25 @@
+#extrainfoholder {
+  width: 100%;
+  height: 10em;
+  margin-top: 1em;
+  margin-left: 1em;
+}
+
+#gdprpic {
+  height: 8em;
+  width: 12em;
+}
+
+h1 {
+  display: inline-block;
+  margin-left: 1em;
+  cursor: pointer;
+  font-family: serif;
+  font-weight: normal;
+}
+
+#clickheading {
+  cursor: pointer;
+  display: inline-block;
+  margin-left: 1em;
+}
