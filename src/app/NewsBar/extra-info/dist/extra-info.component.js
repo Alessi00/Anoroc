@@ -18,6 +18,9 @@ var ExtraInfoComponent = /** @class */ (function () {
     ExtraInfoComponent.prototype.routePrivacy = function () {
         this.router.navigate(['/privacyInfo']);
     };
+    ExtraInfoComponent.prototype.downloadAppBtn = function () {
+        window.open("https://anorocb2cloginwebsite.blob.core.windows.net/anorocmobileapp/com.anorocmobileapp-Signed.apk");
+    };
     ExtraInfoComponent = __decorate([
         core_1.Component({
             selector: 'app-extra-info',

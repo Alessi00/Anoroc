@@ -21,5 +21,8 @@ export class ExtraInfoComponent implements OnInit {
   {
     this.router.navigate(['/privacyInfo']);
   }
-
+  downloadAppBtn()
+  {
+    window.open("https://anorocb2cloginwebsite.blob.core.windows.net/anorocmobileapp/com.anorocmobileapp-Signed.apk");
+  }
 }
