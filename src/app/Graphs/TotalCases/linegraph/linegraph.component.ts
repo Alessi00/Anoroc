@@ -35,7 +35,10 @@ export class LinegraphComponent implements OnInit {
     }
     return false;
   }
-
+  openDataSource()
+  {
+    window.open("https://github.com/dsfsi/covid19za/tree/master/data");
+  }
   ngOnInit(): void {
     this.innerWidth = window.innerWidth;
     console.log(this.innerWidth);
@@ -44,10 +47,14 @@ export class LinegraphComponent implements OnInit {
       var canvasobj = document.getElementsByTagName('canvas')[0];
         canvasobj.width  = 500;
         canvasobj.height = 200;
+        var moreinfobutton = document.getElementById('datasourcebtn');
+	  moreinfobutton.style.width = "505px";
     }
     else if(this.innerWidth <= 1550)
     {
       var canvasobj = document.getElementsByTagName('canvas')[0];
+      var datasource = document.getElementById('datasourcebtn');
+      datasource.style.width = "600px";
       canvasobj.width  = 600;
       canvasobj.height = 280;
     }
@@ -56,6 +63,8 @@ export class LinegraphComponent implements OnInit {
       var canvasobj = document.getElementsByTagName('canvas')[0];
       canvasobj.width  = 750;
       canvasobj.height = 350;
+      var datasource = document.getElementById('datasourcebtn');
+      datasource.style.width = "755px";
     }
     var options = {
       responsive: false,
