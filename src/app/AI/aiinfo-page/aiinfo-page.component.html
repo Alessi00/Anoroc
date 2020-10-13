@@ -1,5 +1,31 @@
 <div >
-    <div style="display: inline-block"  ><app-stacked-bar-chart></app-stacked-bar-chart></div>
-    <div style="display: inline-block" ><app-forecast-graph></app-forecast-graph></div>
-    <div style="display: block"><app-line-chart></app-line-chart></div>
+    <div class="row mt-5" >
+        <div class="offset-5 col-5">
+            <div class="page-header">
+                <h1>Information on our AI</h1>
+            </div>
+        </div>
+    </div>
+    <hr>
+    <div class="row">
+        <div class="offset-1 col-10 mt-5" id="bondsgraph">
+            <div class="card"><div class="card-body" id="aiinfoparagraph">The A.I prediction uses ML.NET Forecast Machine Learning Model. 
+                The live data from our database is used to train the model. The minimum amount of entries to train is 30.
+                Since we are using time series, we use Singular Spectrum Analysis to predict the next seven days. Window size of seven days is chosen for the optimal accuracy that the model can predict - if more days were to be predicted will yield inaccurate prediction. Series length of 30 is used to train the model, the model is then further tested against of testing set to produce the Mean Absolute Error and Root Mean Squared Error. MAE is used to calculate the percentage of the accuracy, while RMSE is used to accommodate outliers in the data. 
+                The model then produces an upper bound, lower bound and actual forecast value. The average between the upper bound and lower would become the actual forecast.
+                <a href="https://github.com/dotnet/machinelearning">ML.NET Source</a></div></div>
+            
+        </div>
+    </div>
+    <div class="row ml-1 mt-5">
+        <div class="ml-5 col-4 graphHolder">
+            <div style="display: inline-block; width:100%;"><app-line-chart></app-line-chart></div>
+        </div>
+        <div class="col-5 graphHolder">
+            <div style="display: inline-block; width:100%;"><app-stacked-bar-chart></app-stacked-bar-chart></div>
+        </div>
+        <div class="col-2 graphHolder">
+            <div  ><app-forecast-graph></app-forecast-graph></div>
+        </div>
+    </div>
 </div>
