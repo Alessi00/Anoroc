@@ -17,7 +17,11 @@ import { PrivacyInfoPageComponent } from './GDPR/privacy-info-page/privacy-info-
 import { AIInfoPageComponent } from './AI/aiinfo-page/aiinfo-page.component';
 import { ForecastGraphComponent } from './Graphs/forecast-graph/forecast-graph.component';
 import { ExtraInfoComponent } from './NewsBar/extra-info/extra-info.component';
-
+import { ChartsModule } from 'ng2-charts/ng2-charts';
+import { LineChartComponent } from './Graphs/line-chart/line-chart.component';
+import { Chart } from 'chart.js';
+import { MDBBootstrapModule } from 'angular-bootstrap-md';
+import { StackedBarChartComponent } from './Graphs/stacked-bar-chart/stacked-bar-chart.component';
 export function initializeApp(appConfig: JsonAppConfigService) {
   return () => appConfig.load();
 }
@@ -33,14 +37,19 @@ export function initializeApp(appConfig: JsonAppConfigService) {
     PrivacyInfoPageComponent,
     AIInfoPageComponent,
     ForecastGraphComponent,
-    ExtraInfoComponent
+    ExtraInfoComponent,
+    LineChartComponent,
+    StackedBarChartComponent
   ],
+
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     HttpModule,
-    FormsModule
+    FormsModule,
+    ChartsModule,
+    MDBBootstrapModule.forRoot()
   ],
   providers: [
     ClusterServiceService,
