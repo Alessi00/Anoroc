@@ -22,6 +22,8 @@ import { LineChartComponent } from './Graphs/line-chart/line-chart.component';
 import { Chart } from 'chart.js';
 import { MDBBootstrapModule } from 'angular-bootstrap-md';
 import { StackedBarChartComponent } from './Graphs/stacked-bar-chart/stacked-bar-chart.component';
+import { FAQPageComponent } from './FAQ/faqpage/faqpage.component';
+
 export function initializeApp(appConfig: JsonAppConfigService) {
   return () => appConfig.load();
 }
@@ -39,7 +41,9 @@ export function initializeApp(appConfig: JsonAppConfigService) {
     ForecastGraphComponent,
     ExtraInfoComponent,
     LineChartComponent,
-    StackedBarChartComponent
+    StackedBarChartComponent,
+    ExtraInfoComponent,
+    FAQPageComponent
   ],
 
   imports: [
