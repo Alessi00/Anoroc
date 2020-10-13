@@ -34,7 +34,11 @@ export class LineChartComponent implements OnInit {
   ];
 
   public chartOptions: any = {
-    responsive: true
+    responsive: true,
+    title: {
+      display: true,
+      text: ['Minimum and Maximum Forcast graph']
+    }
   };
   public chartClicked(e: any): void { }
   public chartHovered(e: any): void { }

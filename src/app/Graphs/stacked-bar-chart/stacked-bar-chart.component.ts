@@ -58,6 +58,10 @@ public chartLabels: Array<any> = ['Training Simple', 'Series Length', 'Window si
 
     public chartOptions: any = {
       responsive: true,
+      title: {
+        display: true,
+        text: ['Details of the data used to Train the Model.']
+        },
         scales: {
           xAxes: [{
             stacked: true

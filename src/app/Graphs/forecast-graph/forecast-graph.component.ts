@@ -24,7 +24,11 @@ export class ForecastGraphComponent implements OnInit {
   ];
 
   public chartOptions: any = {
-    responsive: true
+    responsive: true,
+    title: {
+      display: true,
+      text: ['Pie chart showing Accuracy of the AI.']
+    }
   };
   public chartClicked(e: any): void { }
   public chartHovered(e: any): void { }
