@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
+import { DataService } from 'src/app/Services/data.service';
 @Component({
   selector: 'app-forecast-graph',
   templateUrl: './forecast-graph.component.html',
@@ -7,11 +7,24 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ForecastGraphComponent implements OnInit {
 
+  _DataService : DataService; 
   public chartType: string = 'pie';
 
   public chartDatasets: Array<any> = [
-    { data: [98,2], label: 'My First dataset' }
+    { data: [], label: 'Accuracy' }
   ];
+
+  constructor(dataservice: DataService) 
+  { 
+    this._DataService = dataservice;
+    this.updateInfo();
+  }
+  async updateInfo()
+  {
+     this._DataService.GetAccuracyData().subscribe(response => {
+      this.chartDatasets = [{data: response , label:'Accuracy'},];
+    })
+  }
 
   public chartLabels: Array<any> = ['Accuracy'];
 
@@ -32,7 +45,6 @@ export class ForecastGraphComponent implements OnInit {
   };
   public chartClicked(e: any): void { }
   public chartHovered(e: any): void { }
-  constructor() { }
 
   ngOnInit(): void {
   }

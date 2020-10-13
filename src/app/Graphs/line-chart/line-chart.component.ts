@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ChartsModule } from 'ng2-charts/ng2-charts';
 import {Chart, ChartDataSets} from 'chart.js'
+import { DataService } from 'src/app/Services/data.service';
 
 @Component({
 
@@ -10,14 +11,37 @@ import {Chart, ChartDataSets} from 'chart.js'
 })
 export class LineChartComponent implements OnInit {
 
+  _DataService : DataService; 
   public chartType: string = 'line';
-
+  public r1 : any;
+  public r2 : any;
+  public r3 : any;
+  public responseData : number[] = [];
   public chartDatasets: Array<any> = [
-    { data: [54,57,58,59,60,62,63], label: 'Upper bound' },
-    { data: [50,47,45,43,42,41,41], label: 'Forecast' },
-    { data: [45,42,40,38,36,35,33], label: 'Lower Bound' }
+    { data: [], label: 'Upper bound' },
+    { data: [], label: 'Forecast' },
+    { data: [], label: 'Lower Bound' }
   ];
 
+  constructor(dataservice: DataService) 
+  { 
+    this._DataService = dataservice;
+    this.updateInfo();
+  }
+  async updateInfo()
+  {
+     this._DataService.GetUpperBoundData().subscribe(response1 => {
+      this._DataService.GetForecastData().subscribe(response2 => {
+        this._DataService.GetLowerBoundData().subscribe(response3 => {
+          this.chartDatasets = [  
+          { data: response1, label: 'Upper bound' },
+          { data: response2, label: 'Forecast' },
+          { data:response3, label: 'Lower Bound' }];
+        });
+      });
+    });
+   
+  }
   public chartLabels: Array<any> = ['1 Day', '2 Days', '3 Days', '4 Days', '5 Days', '6 Days', '7 Days'];
 
   public chartColors: Array<any> = [
@@ -42,8 +66,6 @@ export class LineChartComponent implements OnInit {
   };
   public chartClicked(e: any): void { }
   public chartHovered(e: any): void { }
-  constructor() { }
-
   ngOnInit(): void {
   }
 

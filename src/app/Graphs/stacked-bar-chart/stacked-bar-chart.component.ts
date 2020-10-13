@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { element } from 'protractor';
+import { PredictionModel } from 'src/app/Models/prediction-model.model';
+import { DataService } from 'src/app/Services/data.service';
 
 @Component({
   selector: 'app-stacked-bar-chart',
@@ -7,11 +10,30 @@ import { Component, OnInit } from '@angular/core';
 })
 export class StackedBarChartComponent implements OnInit {
 
+  _DataService : DataService; 
   public chartType: string = 'bar';
 
-public chartDatasets: Array<any> = [
-  { data: [78,30,7,7,0.95,3.253,4.128], label: 'Training Details' },
-];
+  //constructor(){}
+  public responseData : number[] = [];
+  public chartDatasets: Array<any> = [
+    { data: [] , label: 'Training Details' },
+  ];
+  constructor(dataservice: DataService) 
+  { 
+    this._DataService = dataservice;
+    this.getInfo();
+  }
+  async getInfo()
+  {
+     this._DataService.GetTrainningData().subscribe(response => {
+      this.chartDatasets = [{data: response , label:'Training Details' },];
+    })
+
+  }
+
+  ngOnInit(): void {
+  }
+
 
 public chartLabels: Array<any> = ['Training Simple', 'Series Length', 'Window size', 'Confidence', 'Mean Absolute Error ', 'Root Mean Squared Error'];
 
@@ -75,10 +97,6 @@ public chartLabels: Array<any> = ['Training Simple', 'Series Length', 'Window si
     };
     public chartClicked(e: any): void { }
     public chartHovered(e: any): void { }
-  constructor() { }
-
-  ngOnInit(): void {
-  }
 
 }
 

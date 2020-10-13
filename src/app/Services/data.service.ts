@@ -26,4 +26,35 @@ export class DataService {
     JsonAppConfigService.settings.AnorocEndpoint : '';
     return this.http.get<Array<PredictionModel>>(baseEndpoint + "Data/PredictAreas");
   }
+  GetTrainningData()
+  {
+    var baseEndpoint = JsonAppConfigService.settings && JsonAppConfigService.settings.AnorocEndpoint ?
+    JsonAppConfigService.settings.AnorocEndpoint : '';
+    return this.http.get<Array<number>>(baseEndpoint + "Data/GetTrainningData");
+  }
+
+  GetUpperBoundData()
+  {
+    var baseEndpoint = JsonAppConfigService.settings && JsonAppConfigService.settings.AnorocEndpoint ?
+    JsonAppConfigService.settings.AnorocEndpoint : '';
+    return this.http.get<Array<number>>(baseEndpoint + "Data/GetUpperBoundData");
+  }
+  GetLowerBoundData()
+  {
+    var baseEndpoint = JsonAppConfigService.settings && JsonAppConfigService.settings.AnorocEndpoint ?
+    JsonAppConfigService.settings.AnorocEndpoint : '';
+    return this.http.get<Array<number>>(baseEndpoint + "Data/GetLowerBoundData");
+  }
+  GetForecastData()
+  {
+    var baseEndpoint = JsonAppConfigService.settings && JsonAppConfigService.settings.AnorocEndpoint ?
+    JsonAppConfigService.settings.AnorocEndpoint : '';
+    return this.http.get<Array<number>>(baseEndpoint + "Data/GetForecastData");
+  }
+  GetAccuracyData()
+  {
+    var baseEndpoint = JsonAppConfigService.settings && JsonAppConfigService.settings.AnorocEndpoint ?
+    JsonAppConfigService.settings.AnorocEndpoint : '';
+    return this.http.get<Array<number>>(baseEndpoint + "Data/GetAccuracyData");
+  }
 }
