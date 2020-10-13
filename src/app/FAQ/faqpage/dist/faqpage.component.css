@@ -13,3 +13,9 @@
 h5 {
   font-family: sans-serif;
 }
+
+h1 {
+  font-family: serif;
+  font-weight: normal;
+  font-size: 4em;
+}
