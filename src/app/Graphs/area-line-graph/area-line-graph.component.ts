@@ -62,11 +62,15 @@ export class AreaLineGraphComponent implements OnInit {
 	{
 	  var canvasobj = document.getElementsByTagName('canvas')[1];
       canvasobj.width  = 500;
-      canvasobj.height = 250;
+	  canvasobj.height = 250;
+	  var moreinfobutton = document.getElementById('moreinfo');
+	  moreinfobutton.style.width = "505px";
 	}
     else if(this.innerWidth <= 1550)
     {
-      var canvasobj = document.getElementsByTagName('canvas')[1];
+	  var canvasobj = document.getElementsByTagName('canvas')[1];
+	  var moreinfobutton = document.getElementById('moreinfo');
+	  moreinfobutton.style.width = "600px";
       canvasobj.width  = 600;
       canvasobj.height = 300;
 	}
@@ -74,7 +78,9 @@ export class AreaLineGraphComponent implements OnInit {
     {
       var canvasobj = document.getElementsByTagName('canvas')[1];
       canvasobj.width  = 750;
-      canvasobj.height = 400;
+	  canvasobj.height = 400;
+	  var datasource = document.getElementById('moreinfo');
+      datasource.style.width = "755px";
     }
 	
     this.areachart = new Chart('areaChart', {
@@ -88,7 +94,7 @@ export class AreaLineGraphComponent implements OnInit {
         maintainAspectRatio: true,
 				title: {
 					display: true,
-					text: 'Predicition of Suburb Cases using Singular Spectrum Analysis Forecast Machine Learning Model'
+					text: ['Predicition of Suburb Cases using Singular Spectrum Analysis Forecast Machine Learning Model', 'Showing Top 5 Suburbs']
 				},
 				tooltips: {
 					mode: 'index',

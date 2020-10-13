@@ -1,0 +1,36 @@
+#extrainfoholder {
+  width: 100%;
+  height: 8em;
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+
+#gdprpic {
+  height: 8em;
+  width: 12em;
+}
+
+h1 {
+  display: inline-block;
+  cursor: pointer;
+  font-family: serif;
+  font-weight: normal;
+  margin-right: 10px;
+}
+
+#clickheading {
+  cursor: pointer;
+  display: inline-block;
+  margin-left: 1em;
+}
+
+#downloadApp {
+  cursor: pointer;
+  display: inline-block;
+}
+
+#anorocpic {
+  display: inline-block;
+  height: 8em;
+  width: 9em;
+}

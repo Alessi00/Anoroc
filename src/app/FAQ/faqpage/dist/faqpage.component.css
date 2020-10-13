@@ -1,0 +1,21 @@
+#accordion {
+  width: 50vw;
+}
+
+.btn {
+  width: 100%;
+}
+
+.card-body {
+  font-family: sans-serif;
+}
+
+h5 {
+  font-family: sans-serif;
+}
+
+h1 {
+  font-family: serif;
+  font-weight: normal;
+  font-size: 4em;
+}
