@@ -29,10 +29,13 @@
             ],
             "styles": [
               "src/styles.sass",
-              "node_modules/azure-maps-control/dist/atlas.min.css"
+              "node_modules/azure-maps-control/dist/atlas.min.css",
+              "node_modules/bootstrap/dist/css/bootstrap.min.css"
             ],
             "scripts": [
-              "node_modules/azure-maps-control/dist/atlas.min.js"
+              "node_modules/azure-maps-control/dist/atlas.min.js",
+              "node_modules/jquery/dist/jquery.min.js",
+              "node_modules/bootstrap/dist/js/bootstrap.min.js"
             ]
           },
           "configurations": {

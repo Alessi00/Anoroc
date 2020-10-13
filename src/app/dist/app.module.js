@@ -24,6 +24,7 @@ var main_page_component_1 = require("./MainPage/main-page/main-page.component");
 var privacy_info_page_component_1 = require("./GDPR/privacy-info-page/privacy-info-page.component");
 var aiinfo_page_component_1 = require("./AI/aiinfo-page/aiinfo-page.component");
 var extra_info_component_1 = require("./NewsBar/extra-info/extra-info.component");
+var faqpage_component_1 = require("./FAQ/faqpage/faqpage.component");
 function initializeApp(appConfig) {
     return function () { return appConfig.load(); };
 }
@@ -42,14 +43,15 @@ var AppModule = /** @class */ (function () {
                 main_page_component_1.MainPageComponent,
                 privacy_info_page_component_1.PrivacyInfoPageComponent,
                 aiinfo_page_component_1.AIInfoPageComponent,
-                extra_info_component_1.ExtraInfoComponent
+                extra_info_component_1.ExtraInfoComponent,
+                faqpage_component_1.FAQPageComponent
             ],
             imports: [
                 platform_browser_1.BrowserModule,
                 app_routing_module_1.AppRoutingModule,
                 http_2.HttpClientModule,
                 http_1.HttpModule,
-                forms_1.FormsModule
+                forms_1.FormsModule,
             ],
             providers: [
                 cluster_service_service_1.ClusterServiceService,

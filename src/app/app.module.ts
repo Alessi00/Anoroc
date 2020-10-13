@@ -16,6 +16,7 @@ import { MainPageComponent } from './MainPage/main-page/main-page.component';
 import { PrivacyInfoPageComponent } from './GDPR/privacy-info-page/privacy-info-page.component';
 import { AIInfoPageComponent } from './AI/aiinfo-page/aiinfo-page.component';
 import { ExtraInfoComponent } from './NewsBar/extra-info/extra-info.component';
+import { FAQPageComponent } from './FAQ/faqpage/faqpage.component';
 
 export function initializeApp(appConfig: JsonAppConfigService) {
   return () => appConfig.load();
@@ -31,14 +32,15 @@ export function initializeApp(appConfig: JsonAppConfigService) {
     MainPageComponent,
     PrivacyInfoPageComponent,
     AIInfoPageComponent,
-    ExtraInfoComponent
+    ExtraInfoComponent,
+    FAQPageComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     HttpModule,
-    FormsModule
+    FormsModule,
   ],
   providers: [
     ClusterServiceService,
