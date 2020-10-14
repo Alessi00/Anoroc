@@ -10,8 +10,7 @@
     <div class="row">
         <div class="offset-1 col-10 mt-5" id="bondsgraph">
             <div class="card"><div class="card-body" id="aiinfoparagraph">The A.I prediction uses ML.NET Forecast Machine Learning Model. 
-                The live data from our database is used to train the model. The minimum amount of entries to train is 30.
-                Since we are using time series, we use Singular Spectrum Analysis to predict the next seven days. Window size of seven days is chosen for the optimal accuracy that the model can predict - if more days were to be predicted will yield inaccurate prediction. Series length of 30 is used to train the model, the model is then further tested against of testing set to produce the Mean Absolute Error and Root Mean Squared Error. MAE is used to calculate the percentage of the accuracy, while RMSE is used to accommodate outliers in the data. 
+                The live data from our database is used to train the model. Since we are using time series, we use Singular Spectrum Analysis to predict the next seven days. Window size of seven days is chosen for the optimal accuracy that the model can predict - if more days were to be predicted will yield inaccurate prediction. Series length of 30 is used to train the model, the model is then further tested against of testing set to produce the Mean Absolute Error and Root Mean Squared Error. MAE is used to calculate the percentage of the accuracy, while RMSE is used to accommodate outliers in the data. 
                 The model then produces an upper bound, lower bound and actual forecast value. The upper bound and lower is used for the estimation of the actual forecast.
                 <a href="https://github.com/dotnet/machinelearning">ML.NET Source</a></div></div>
             
