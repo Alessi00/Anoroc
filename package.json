@@ -35,7 +35,7 @@
     "azure-maps-rest": "^2.0.5",
     "bootstrap": "^4.5.2",
     "canvasjs": "^1.8.3",
-    "chart.js": "^2.5.0",
+    "chart.js": "^2.9.3",
     "hammerjs": "^2.0.8",
     "http": "0.0.1-security",
     "httpclient": "^0.1.0",
