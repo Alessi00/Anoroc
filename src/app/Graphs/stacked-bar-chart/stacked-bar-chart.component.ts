@@ -35,7 +35,7 @@ export class StackedBarChartComponent implements OnInit {
   }
 
 
-public chartLabels: Array<any> = ['Training Simple', 'Series Length', 'Window size', 'Confidence', 'Mean Absolute Error ', 'Root Mean Squared Error'];
+public chartLabels: Array<any> = ['Training Sample', 'Series Length', 'Window size', 'Confidence', 'Mean Absolute Error ', 'Root Mean Squared Error'];
 
   public chartColors: Array<any> = [
     {
